@@ -1,6 +1,7 @@
 const TelegramBot = require("node-telegram-bot-api");
-
-const token = "6775479012:AAEprmfeVKPl5NZuVGgykplVcZLwpGQnVHQ";
+const {config} = require('dotenv');
+config();
+const token = process.env.TOKEN;
 const bot = new TelegramBot(token, { polling: true });
 
 bot.onText(/\/start/, (msg) => {
@@ -18,7 +19,7 @@ bot.onText(/\/start/, (msg) => {
           {
             text: "Bet Channels",
             web_app: {
-              url: "https://telegrambot-bet.netlify.app/",
+              url: `https://telegrambot-bet.netlify.app?username=${msg.chat.username}`,
             },
           },
         ],
