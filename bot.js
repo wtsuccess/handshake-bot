@@ -11,13 +11,13 @@ bot.onText(/\/start/, (msg) => {
       inline_keyboard: [
         [
           {
-            text: "Create Bet Channel",
+            text: "Create Bet",
             web_app: {
               url: `https://telegrambot-bet.netlify.app/create?username=${msg.chat.username}`,
             },
           },
           {
-            text: "Bet Channels",
+            text: "Active Bets",
             web_app: {
               url: `https://telegrambot-bet.netlify.app?username=${msg.chat.username}`,
             },
@@ -27,5 +27,5 @@ bot.onText(/\/start/, (msg) => {
     },
   };
 
-  bot.sendMessage(chatId, "Choose an option:", opts);
+  bot.sendMessage(chatId, "Wanna Bet?", opts);
 });
